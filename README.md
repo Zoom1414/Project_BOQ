@@ -254,3 +254,10 @@ for documents with multiple line items.
 
 References: [Rails row locking](https://api.rubyonrails.org/classes/ActiveRecord/Locking/Pessimistic.html)
 and [Devise configuration](https://github.com/heartcombo/devise).
+
+#สร้าง Users
+bin/rails console
+User.create!(name: "Administrator", email: "admin@your-company.com", password: "รหัสผ่านที่ปลอดภัยของคุณ", role: :admin)
+
+u = User.find_by!(email: "admin@your-company.com") //หาUser
+u.update!(password: "รหัสผ่านใหม่อย่างน้อย12ตัว", role: :admin) //แก้รหัส
